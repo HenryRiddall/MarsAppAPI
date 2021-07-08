@@ -14,8 +14,8 @@ router.get('/rovers', async (req, res) => {
     res.send(response.data)
 });
 
-router.get('/rovers/photos', async (req, res) => {
-    const response = await getLatestPicture(<string> req.query.rover, <string> req.query.camera)
+router.get('/rovers/:rover/:camera', async (req, res) => {
+    const response = await getLatestPicture(<string> req.params.rover, <string> req.params.camera)
     res.send(response.data)
 });
 
